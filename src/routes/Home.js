@@ -1,4 +1,4 @@
-import { dbService } from "fbase";
+import { dbService } from "../fbase";
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
