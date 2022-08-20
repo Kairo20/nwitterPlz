@@ -1,6 +1,6 @@
 import { authService, dbService } from "../fbase";
 import React, { useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Profile = ({ userObj, refreshUser }) => {
   const history = useHistory();
@@ -8,6 +8,7 @@ const Profile = ({ userObj, refreshUser }) => {
   const onLogOutClick = () => {
     authService.signOut();
     history.push("/");
+    refreshUser();
   };
   const getMyNweets = async () => {
     const nweets = await dbService
